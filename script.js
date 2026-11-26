@@ -1,5 +1,4 @@
-// Troque pela URL do seu backend na Vercel depois do deploy
-const API_URL = "http://localhost:3000";
+const API_URL = "https://estoquefacil-backend.vercel.app";
 
 const form = document.getElementById("form");
 const campos = {
