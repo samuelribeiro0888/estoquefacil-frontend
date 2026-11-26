@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EstoqueFácil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>EstoqueFácil</h1>
+    <p id="resumo">Carregando produtos...</p>
+  </header>
+
+  <main>
+    <section class="painel">
+      <h2 id="titulo-form">Novo produto</h2>
+      <form id="form">
+        <input type="hidden" id="id">
+        <label>Nome
+          <input id="nome" required maxlength="80">
+        </label>
+        <label>Categoria
+          <input id="categoria" maxlength="40">
+        </label>
+        <label>Preço (R$)
+          <input id="preco" type="number" step="0.01" min="0" required>
+        </label>
+        <label>Quantidade
+          <input id="quantidade" type="number" step="1" min="0" required>
+        </label>
+        <div class="acoes">
+          <button type="submit" id="btn-salvar">Adicionar produto</button>
+          <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar edição</button>
+        </div>
+      </form>
+      <p id="msg" role="status"></p>
+    </section>
+
+    <section class="painel">
+      <h2>Produtos em estoque</h2>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th><th>Categoria</th><th>Preço</th><th>Qtd.</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+:root {
+  --fundo: #f2f5f7;
+  --papel: #ffffff;
+  --tinta: #14212b;
+  --suave: #5b6b78;
+  --linha: #d5dde3;
+  --primaria: #0f766e;
+  --alerta: #b45309;
+  --alerta-fundo: #fef3e2;
+  --perigo: #b42318;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--fundo);
+  color: var(--tinta);
+  line-height: 1.5;
+}
+.topo { padding: 28px 20px 8px; max-width: 960px; margin: 0 auto; }
+.topo h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
+.topo p { margin: 4px 0 0; color: var(--suave); }
+main { max-width: 960px; margin: 0 auto; padding: 16px 20px 48px; display: grid; gap: 20px; }
+.painel { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 20px; }
+.painel h2 { margin: 0 0 14px; font-size: 1.1rem; }
+
+form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+label { display: grid; gap: 4px; font-size: 0.9rem; color: var(--suave); }
+input {
+  font: inherit; color: var(--tinta);
+  padding: 9px 10px; border: 1px solid var(--linha); border-radius: 6px; background: #fff;
+}
+input:focus-visible, button:focus-visible { outline: 3px solid #7cc4bd; outline-offset: 1px; }
+.acoes { grid-column: 1 / -1; display: flex; gap: 10px; flex-wrap: wrap; }
+
+button {
+  font: inherit; font-weight: 600; cursor: pointer;
+  padding: 9px 16px; border: 0; border-radius: 6px;
+  background: var(--primaria); color: #fff;
+}
+button:hover { filter: brightness(1.1); }
+button.secundario { background: transparent; color: var(--tinta); border: 1px solid var(--linha); }
+button.perigo { background: var(--perigo); }
+button.pequeno { padding: 5px 10px; font-size: 0.85rem; }
+
+#msg { min-height: 1.4em; margin: 12px 0 0; font-size: 0.9rem; }
+#msg.erro { color: var(--perigo); }
+#msg.ok { color: var(--primaria); }
+
+.tabela-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--linha); }
+th { font-size: 0.85rem; color: var(--suave); font-weight: 600; }
+td.num, th.num { text-align: right; }
+tr.baixo td { background: var(--alerta-fundo); }
+tr.baixo .qtd { color: var(--alerta); font-weight: 700; }
+td.botoes { display: flex; gap: 6px; }
+.vazio { color: var(--suave); padding: 18px 8px; }
+
+@media (max-width: 600px) { form { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
